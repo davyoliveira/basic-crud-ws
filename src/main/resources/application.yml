@@ -1,0 +1,20 @@
+spring:
+  main:
+    # sem essa definição a aplicação dará erros ao instanciar os repositories
+    allow-bean-definition-overriding: true
+  data:
+    jpa.repositories.enabled: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/softplan
+    username: root
+    password: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+      
+server:
+  port: 8081 
+  
+  
