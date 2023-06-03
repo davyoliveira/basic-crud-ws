@@ -1,6 +1,7 @@
 package com.softplan.crudapp.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,11 +17,15 @@ public class PersonService {
     PersonRepository personRepository;
 
     public List < PersonDTO > getAllPersons () {
-        return PersonDTO.entityListToDtoList( personRepository.findAll() );
+        List < Person > persons = personRepository.findAll();
+        return PersonDTO.entityListToDtoList( persons );
     }
 
     public PersonDTO getPersonById ( Long id ) {
-        return PersonDTO.entityToDto( personRepository.findById( id ).get() );
+
+        Optional < Person > optPerson = personRepository.findById( id );
+
+        return PersonDTO.entityToDto( optPerson.get() );
     }
 
     public void addPerson ( PersonDTO dto ) {
