@@ -39,14 +39,10 @@ public class PersonService {
 
         Person person = PersonDTO.dtoToEntity( dto );
 
-        // verificar o que acontece aqui
-
         personRepository.save( person );
     }
 
     public void deletePerson ( Long id ) {
-
-        // verificar auditoria aqui
 
         personRepository.deleteById( id );
     }

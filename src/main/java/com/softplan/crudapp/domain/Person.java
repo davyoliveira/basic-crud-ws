@@ -1,7 +1,10 @@
 package com.softplan.crudapp.domain;
 
+import com.softplan.crudapp.listener.AuditListener;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -9,7 +12,8 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table
-public class Person extends AbstractAuditingEntity {
+@EntityListeners ( AuditListener.class )
+public class Person {
 
     private static final long serialVersionUID = - 7314511371407644708L;
 
