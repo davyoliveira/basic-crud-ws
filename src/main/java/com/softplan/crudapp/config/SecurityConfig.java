@@ -24,8 +24,6 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource () {
         CorsConfiguration configuration = new CorsConfiguration();
-        // configuration.setAllowedOrigins( Arrays.asList(
-        // "http://localhost:8080" ) );
         configuration.addAllowedHeader( "*" );
         configuration.addAllowedOrigin( "*" );
         configuration.addAllowedMethod( HttpMethod.GET.name() );
@@ -33,11 +31,6 @@ public class SecurityConfig {
         configuration.addAllowedMethod( HttpMethod.PUT.name() );
         configuration.addAllowedMethod( HttpMethod.DELETE.name() );
         configuration.addExposedHeader( "*" );
-        // configuration.setAllowedMethods( Arrays.asList( "GET" , "POST" ,
-        // "PUT" , "DELETE" , "OPTIONS" ) );
-        // configuration.setAllowCredentials( true );
-        // configuration.setAllowedHeaders( Arrays.asList( "Authorization" ,
-        // "Requestor-Type" ) );
         org.springframework.web.cors.UrlBasedCorsConfigurationSource source = new org.springframework.web.cors.UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration( "/**" , configuration );
         return source;
