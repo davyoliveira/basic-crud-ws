@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@EnableJpaAuditing ( auditorAwareRef = "auditingService" )
+@EnableJpaAuditing ( auditorAwareRef = "auditListener" )
 public class CrudappApplication {
 
 	public static void main(String[] args) {
